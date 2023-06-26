@@ -1,0 +1,1 @@
+First day of specialization. We study ES6 Basics today. What A way to start!
