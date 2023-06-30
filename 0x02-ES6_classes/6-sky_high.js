@@ -5,7 +5,11 @@ import Building from './5-building';
 class SkyHighBuilding extends Building {
   constructor(sqft, floors) {
     super(sqft);
-    this._floors = floors;
+    if (typeof floors === 'number') {
+      this._floors = floors;
+    } else {
+      throw new TypeError('Floor is a number');
+    }
   }
 
   get sqft() {
@@ -25,7 +29,7 @@ class SkyHighBuilding extends Building {
   }
 
   evacuationWarningMessage() {
-    return ('Evacuate slowly the NUMBER_OF_FLOORS floors');
+    return `Evacuate slowly the ${this._floors} floors`;
   }
 }
 
