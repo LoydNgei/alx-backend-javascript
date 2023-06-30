@@ -1,12 +1,10 @@
+/* eslint-disable class-methods-use-this */
+
 class HolbertonCourse {
   constructor(name, length, students) {
-    this._name = '';
-    this._length = 0;
-    this._students = [];
-
-    this._name = name;
-    this._length = length;
-    this._students = students;
+    this._name = this._validateString(name, 'Name');
+    this._length = this._validateNumber(length, 'Length');
+    this._students = this._validateArray(students, 'Students');
   }
 
   get name() {
@@ -14,11 +12,7 @@ class HolbertonCourse {
   }
 
   set name(newName) {
-    if (typeof newName === 'string') {
-      this._name = newName;
-    } else {
-      throw new TypeError('Name must be a string');
-    }
+    this._name = this._validateString(newName, 'Name');
   }
 
   get length() {
@@ -26,11 +20,7 @@ class HolbertonCourse {
   }
 
   set length(newLength) {
-    if (typeof newLength === 'number') {
-      this._length = newLength;
-    } else {
-      throw new TypeError('Length must be a number');
-    }
+    this._length = this._validateNumber(newLength, 'Length');
   }
 
   get students() {
@@ -38,11 +28,28 @@ class HolbertonCourse {
   }
 
   set students(newStudents) {
-    if (Array.isArray(newStudents)) {
-      this._students = newStudents;
-    } else {
-      throw new TypeError('Students must be an array of strings');
+    this._students = this._validateArray(newStudents, 'Students');
+  }
+
+  _validateString(value, propName) {
+    if (typeof value !== 'string') {
+      throw new TypeError(`${propName} must be a string`);
     }
+    return value;
+  }
+
+  _validateNumber(value, propName) {
+    if (typeof value !== 'number') {
+      throw new TypeError(`${propName} must be a number`);
+    }
+    return value;
+  }
+
+  _validateArray(value, propName) {
+    if (!Array.isArray(value)) {
+      throw new TypeError(`${propName} must be an array`);
+    }
+    return value;
   }
 }
 
