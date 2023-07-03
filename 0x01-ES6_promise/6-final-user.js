@@ -7,7 +7,7 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   promises.push(signUpUser(firstName, lastName));
   promises.push(uploadPhoto(fileName));
 
-  const feedback = [];
+  const results = [];
 
   return Promise.allSettled(promises)
     .then((settledPromises) => {
@@ -16,12 +16,12 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
         const { status } = result;
         const value = status === 'fulfilled' ? result.value : result.reason;
 
-        feedback.push({
+        results.push({
           status,
           value,
         });
       }
 
-      return feedback;
+      return results;
     });
 }
