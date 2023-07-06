@@ -27,7 +27,6 @@ module.exports = {
         'LabeledStatement',
         'WithStatement',
       ],
-      
     },
     overrides:[
       {
@@ -36,4 +35,3 @@ module.exports = {
       }
     ]
   };
-  
