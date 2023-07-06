@@ -1,1 +1,0 @@
-Today we look at Data manipulation(Array, Typed Array, Set Data structure, Map data structure and WeakMap)

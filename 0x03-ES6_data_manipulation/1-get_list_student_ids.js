@@ -1,5 +1,0 @@
-function getListStudentIds() {
-    const newArray = {
-
-    }
-}
