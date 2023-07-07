@@ -1,4 +1,8 @@
 function cleanSet(set, startString) {
+  if (startString === '') {
+    return '';
+  }
+
   let newString = '';
   for (const element of set) {
     if (element.startsWith(startString)) {
