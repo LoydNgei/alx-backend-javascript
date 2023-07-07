@@ -1,6 +1,7 @@
 function cleanSet(set, startString) {
   if (startString === '') {
-    return '';
+    return 
+    '';
   }
 
   let newString = '';
