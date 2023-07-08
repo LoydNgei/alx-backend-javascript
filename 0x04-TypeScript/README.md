@@ -1,0 +1,1 @@
+Today we dive into the world of Typescript
