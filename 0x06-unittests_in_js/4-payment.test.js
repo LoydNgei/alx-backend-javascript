@@ -3,7 +3,7 @@ const chai = require('chai');
 const expect = chai.expect;
 
 const Utils = require('./utils.js');
-const sendPaymentRequestToApi = require('./3-payment');
+const sendPaymentRequestToApi = require('./4-payment');
 
 describe('sendPaymentRequestToApi', function() {
     it('Stub the SUM type', function() {
